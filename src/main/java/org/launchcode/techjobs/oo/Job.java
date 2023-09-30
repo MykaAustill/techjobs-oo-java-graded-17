@@ -84,15 +84,43 @@ public class Job {
     }
     @Override
     public String toString() {
-        return System.lineSeparator() +
-                "ID: " + getId() + System.lineSeparator() +
-                "Name: " + (getName().isEmpty() ? "Data not available" : getName()) + System.lineSeparator() +
-                "Employer: " + (getEmployer().getValue().isEmpty() ? "Data not available" : getEmployer().getValue()) + System.lineSeparator() +
-                "Location: " + (getLocation().getValue().isEmpty() ? "Data not available" : getLocation().getValue()) + System.lineSeparator() +
-                "Position Type: " + (getPositionType().getValue().isEmpty() ? "Data not available" : getPositionType().getValue()) + System.lineSeparator() +
-                "Core Competency: " + (getCoreCompetency().getValue().isEmpty() ? "Data not available" : getCoreCompetency().getValue()) + System.lineSeparator() +
-                System.lineSeparator();
+        String result = System.lineSeparator() +
+                "ID: " + getId() + System.lineSeparator();
+
+        if (getName().isEmpty()) {
+            result += "Name: Data not available" + System.lineSeparator();
+        } else {
+            result += "Name: " + getName() + System.lineSeparator();
+        }
+
+        if (getEmployer().getValue().isEmpty()) {
+            result += "Employer: Data not available" + System.lineSeparator();
+        } else {
+            result += "Employer: " + getEmployer().getValue() + System.lineSeparator();
+        }
+
+        if (getLocation().getValue().isEmpty()) {
+            result += "Location: Data not available" + System.lineSeparator();
+        } else {
+            result += "Location: " + getLocation().getValue() + System.lineSeparator();
+        }
+
+        if (getPositionType().getValue().isEmpty()) {
+            result += "Position Type: Data not available" + System.lineSeparator();
+        } else {
+            result += "Position Type: " + getPositionType().getValue() + System.lineSeparator();
+        }
+
+        if (getCoreCompetency().getValue().isEmpty()) {
+            result += "Core Competency: Data not available" + System.lineSeparator();
+        } else {
+            result += "Core Competency: " + getCoreCompetency().getValue() + System.lineSeparator();
+        }
+
+        result += System.lineSeparator();
+        return result;
     }
+
 
 
 
